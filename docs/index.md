@@ -2,6 +2,12 @@
 title: Modular Test Orchestrator
 ---
 
+> **A containerized testing harness demonstrating CI/CD automation, service orchestration, and Python-based smoke testing.**
+
+<img src="https://img.shields.io/badge/Python-3.11-blue" />
+<img src="https://img.shields.io/badge/GitHub%20Actions-CI-green" />
+<img src="https://img.shields.io/badge/Docker-Compose-blue" />
+
 # Modular Test Orchestrator
 
 **Dockerized test target + Pytest smoke tests + GitHub Actions CI**
@@ -52,6 +58,25 @@ It’s a small, focused demo of how you can take a service from “runs on my la
 
 ## ⚙️ Architecture at a glance
 
+```
+
+[ GitHub Actions CI ]
+|--> build test-target image
+|--> start container
+|--> run pytest smoke
+
+[docker-compose.test-target.yml]
+|--> FastAPI "test-target" app
+|--> HTTP (localhost:8000)
+
+[pytest smoke suite]
+|--> health + echo tests
+|--> httpx client
+
+```
+
+```
+
           ┌──────────────────────────┐
           │   GitHub Actions CI      │
           │  - build test target     │
@@ -71,3 +96,13 @@ It’s a small, focused demo of how you can take a service from “runs on my la
           │  - health + echo tests   │
           │  - httpx client          │
           └──────────────────────────┘
+```
+
+---
+
+> 🔗 **Source code**: [https://github.com/slevinas/modular-test-orchestrator](https://github.com/slevinas/modular-test-orchestrator)
+
+> **Related:**
+> 🔧 [Benchmaker-Lite — FastAPI Benchmarking & Observability Pipeline](https://slevinas.github.io/benchmaker-lite/)
+
+---
