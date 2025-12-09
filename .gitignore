@@ -36,3 +36,4 @@ htmlcov/
 otel/logs/*
 
 docs/*.mdclickhouse-query
+docs/Dbugging-Docker.md
