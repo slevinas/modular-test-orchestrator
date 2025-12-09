@@ -1,0 +1,38 @@
+docs/Understanding-github-ci-githubRunner.md
+
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual envs
+.venv/
+venv/
+.env
+
+# Poetry
+poetry.lock
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker artifacts
+*.log
+
+# Misc
+.DS_Store
+
+
+otel/logs/*
+
+docs/*.mdclickhouse-query
