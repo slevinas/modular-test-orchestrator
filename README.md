@@ -1,5 +1,13 @@
 # Modular Test Orchestrator
 
+---
+
+## 3. Optional: Link the landing page from README
+
+[🌐 Live landing page](https://slevinas.github.io/modular-test-orchestrator/)
+
+...
+
 A small, focused repo that demonstrates how to:
 
 - Spin up a **Dockerized test target** (FastAPI service)
@@ -55,7 +63,7 @@ You can think of it as:
 
 ```text
 pytest (smoke)  →  Dockerized FastAPI test target  →  CI (GitHub Actions)
-````
+```
 
 Later stages will plug in **Ansible** to provision remote runners and orchestrate tests on real infrastructure.
 
@@ -93,8 +101,8 @@ Later stages will plug in **Ansible** to provision remote runners and orchestrat
 
 ### Prerequisites
 
-* Python **3.11+**
-* Docker + Docker Compose (`docker compose` CLI)
+- Python **3.11+**
+- Docker + Docker Compose (`docker compose` CLI)
 
 Install Python dependencies once:
 
@@ -116,8 +124,8 @@ docker compose -f docker-compose.test-target.yml up --build
 
 The FastAPI test target will be available at:
 
-* `http://localhost:8080/health`
-* `http://localhost:8080/echo?value=hello`
+- `http://localhost:8080/health`
+- `http://localhost:8080/echo?value=hello`
 
 ### Run Smoke Tests
 
@@ -129,8 +137,8 @@ pytest -m smoke -vv
 
 What this does:
 
-* `test_health_and_info` validates `/health`.
-* `test_echo_round_trip` validates the echo endpoint round-trip behavior.
+- `test_health_and_info` validates `/health`.
+- `test_echo_round_trip` validates the echo endpoint round-trip behavior.
 
 ---
 
@@ -174,17 +182,17 @@ This makes the repo self-checking: if the container or basic endpoints break, CI
 
 The next step for this project is to mirror the **real-world setup** I used at XPLG:
 
-* Provision GitHub runners or test VMs using **Ansible**.
-* Install Docker / Python on the remote.
-* Deploy the test target stack remotely.
-* Trigger pytest runs via Ansible playbooks.
-* Optionally collect **Allure** results and artifacts.
+- Provision GitHub runners or test VMs using **Ansible**.
+- Install Docker / Python on the remote.
+- Deploy the test target stack remotely.
+- Trigger pytest runs via Ansible playbooks.
+- Optionally collect **Allure** results and artifacts.
 
 Folders already stubbed out for this:
 
-* `ansible/playbooks/*`
-* `ansible/inventories/*`
-* `ansible/roles/*`
+- `ansible/playbooks/*`
+- `ansible/inventories/*`
+- `ansible/roles/*`
 
 ---
 
@@ -192,24 +200,23 @@ Folders already stubbed out for this:
 
 **Short term**
 
-* [ ] Add more smoke tests (failure modes, non-200s).
-* [ ] Add `Makefile` helpers (`make up`, `make test`, `make ci-local`).
-* [ ] Add linting / formatting (ruff, black) and wire into CI.
+- [ ] Add more smoke tests (failure modes, non-200s).
+- [ ] Add `Makefile` helpers (`make up`, `make test`, `make ci-local`).
+- [ ] Add linting / formatting (ruff, black) and wire into CI.
 
 **Medium term**
 
-* [ ] Implement Ansible playbooks for remote runner setup.
-* [ ] Add Allure reporting for pytest results.
-* [ ] Add parameterized test targets (different images / versions).
+- [ ] Implement Ansible playbooks for remote runner setup.
+- [ ] Add Allure reporting for pytest results.
+- [ ] Add parameterized test targets (different images / versions).
 
 **Long term**
 
-* [ ] Turn this into a reusable template for “test harness around any service”.
-* [ ] Add support for multiple environments (dev / staging / prod) via inventories.
+- [ ] Turn this into a reusable template for “test harness around any service”.
+- [ ] Add support for multiple environments (dev / staging / prod) via inventories.
 
 ---
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
