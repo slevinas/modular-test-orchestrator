@@ -75,32 +75,12 @@ It’s a small, focused demo of how you can take a service from “runs on my la
 
 ```
 
-```
 
-          ┌──────────────────────────┐
-          │   GitHub Actions CI      │
-          │  - build test target     │
-          │  - run pytest smoke      │
-          └─────────────┬────────────┘
-                        │
-                        ▼
-        ┌────────────────────────────────┐
-        │   docker-compose.test-target   │
-        │  - FastAPI "test-target" app   │
-        │  - dedicated network           │
-        └─────────────┬──────────────────┘
-                      │  HTTP (localhost:8000)
-                      ▼
-          ┌──────────────────────────┐
-          │  Pytest smoke suite      │
-          │  - health + echo tests   │
-          │  - httpx client          │
-          └──────────────────────────┘
-```
 
 ---
 
 > 🔗 **Source code**: [https://github.com/slevinas/modular-test-orchestrator](https://github.com/slevinas/modular-test-orchestrator)
+
 
 > **Related:**
 > 🔧 [Benchmaker-Lite — FastAPI Benchmarking & Observability Pipeline](https://slevinas.github.io/benchmaker-lite/)
