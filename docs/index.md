@@ -20,7 +20,7 @@ It’s a small, focused demo of how you can take a service from “runs on my la
 
 - **Containerized test target**
 
-  - FastAPI app packaged in a Docker image  
+  - FastAPI app packaged in a Docker image
   - Health endpoint + simple echo endpoint
   - `docker-compose.test-target.yml` spins it up on a dedicated network
 
@@ -52,7 +52,6 @@ It’s a small, focused demo of how you can take a service from “runs on my la
 
 ## ⚙️ Architecture at a glance
 
-```text
           ┌──────────────────────────┐
           │   GitHub Actions CI      │
           │  - build test target     │
