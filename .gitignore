@@ -37,3 +37,4 @@ otel/logs/*
 
 docs/*.mdclickhouse-query
 docs/Dbugging-Docker.md
+docs/Current-Status.md
