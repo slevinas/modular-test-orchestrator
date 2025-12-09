@@ -33,7 +33,7 @@ jobs:
           sleep 10
 
       - name: Run smoke tests
-        working-directory: ${{ github.workspace }}
+        working-directory: ${{ github.workspace }} 
         env:
           TEST_TARGET_BASE_URL: http://localhost:8080
         run: |
